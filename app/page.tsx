@@ -1,65 +1,114 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Nav } from "@/components/layout/Nav";
+import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { Projects } from "@/components/sections/Projects";
+import { Contact } from "@/components/sections/Contact";
+import { Marquee } from "@/components/Marquee";
+
+export default function Portfolio() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const marqueeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.title = "Ifte — Software Developer & Shopify App Builder";
+  }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      tl.from(".nav-item", { y: -20, opacity: 0, stagger: 0.08, duration: 0.6 })
+        .from(".hero-line", { y: 40, opacity: 0, stagger: 0.12, duration: 0.8 }, "-=0.3")
+        .from(
+          ".hero-portrait-wrap",
+          { scale: 0.85, opacity: 0, duration: 1, ease: "power2.out" },
+          "-=0.7",
+        )
+        .from(".hero-bracket", { x: -30, opacity: 0, duration: 0.7 }, "-=0.6")
+        .from(".stat-item", { y: 20, opacity: 0, stagger: 0.08, duration: 0.5 }, "-=0.3")
+        .from(".tech-badge", { scale: 0, opacity: 0, stagger: 0.05, duration: 0.4 }, "-=0.3")
+        .from(".analytics-card", { x: 40, opacity: 0, duration: 0.6 }, "-=0.4");
+
+      gsap.to(".hero-portrait-wrap", {
+        y: -10,
+        duration: 3.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      if (marqueeRef.current) {
+        const w = marqueeRef.current.scrollWidth / 2;
+        gsap.to(marqueeRef.current, {
+          x: -w,
+          duration: 25,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+
+      gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) => {
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: "top 85%" },
+          y: 50,
+          opacity: 0,
+          duration: 0.9,
+          ease: "power3.out",
+        });
+      });
+
+      gsap.from(".service-item", {
+        scrollTrigger: { trigger: ".services-grid", start: "top 80%" },
+        x: -40,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 0.7,
+      });
+
+      gsap.utils.toArray<HTMLElement>(".stat-num").forEach((el) => {
+        const target = Number(el.dataset.value);
+        const obj = { v: 0 };
+        gsap.to(obj, {
+          v: target,
+          duration: 1.6,
+          ease: "power2.out",
+          scrollTrigger: { trigger: el, start: "top 85%" },
+          onUpdate: () => {
+            el.textContent = Math.round(obj.v).toString();
+          },
+        });
+      });
+
+      gsap.utils.toArray<HTMLElement>(".project-card").forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: card, start: "top 82%" },
+          y: 60,
+          opacity: 0,
+          duration: 0.9,
+          delay: (i % 2) * 0.1,
+          ease: "power3.out",
+        });
+      });
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div ref={heroRef} className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Nav />
+      <Hero />
+      <Marquee marqueeRef={marqueeRef} />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }
