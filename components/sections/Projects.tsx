@@ -59,7 +59,9 @@ export class FilesController {
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 lg:px-12">
+    <section id="projects" className="relative py-24 px-6 lg:px-12 overflow-hidden">
+      <div className="absolute top-20 left-0 w-[450px] h-[450px] rounded-full bg-primary/8 blur-[110px] pointer-events-none" />
+      <div className="absolute bottom-20 right-0 w-[350px] h-[350px] rounded-full bg-primary/5 blur-[90px] pointer-events-none" />
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="reveal text-4xl md:text-6xl font-bold">Projects</h2>

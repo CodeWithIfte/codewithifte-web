@@ -13,7 +13,9 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 px-6 lg:px-12">
+    <section id="contact" className="relative py-24 px-6 lg:px-12 overflow-hidden">
+      <div className="absolute top-10 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/3 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
         <div>
           <div className="reveal flex items-center gap-3 text-sm text-primary font-mono uppercase tracking-widest">

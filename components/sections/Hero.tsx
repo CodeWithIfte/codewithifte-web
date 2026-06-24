@@ -27,6 +27,8 @@ const techBadges = [
 export function Hero() {
   return (
     <section id="home" className="relative pt-32 pb-20 px-6 lg:px-12 overflow-hidden">
+      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <div className="hero-bracket text-5xl text-primary/30 font-mono mb-2">&lt;</div>
@@ -103,30 +105,30 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="analytics-card absolute -bottom-2 -right-2 lg:-right-6 bg-card/90 backdrop-blur-md border border-border/50 rounded-2xl p-5 shadow-2xl min-w-[220px]">
-            <div className="text-base font-bold text-foreground">Realtime</div>
+          <div className="analytics-card absolute -bottom-12 lg:-bottom-2 -right-2 lg:-right-6 bg-card/90 backdrop-blur-md border border-border/50 rounded-2xl shadow-2xl min-w-[180px] lg:min-w-[220px] p-3 lg:p-5">
+            <div className="text-sm lg:text-base font-bold text-foreground">Realtime</div>
             <div className="flex items-center gap-1.5 mt-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              <span className="text-[11px] text-muted-foreground">Updating live</span>
+              <span className="w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full bg-primary" />
+              <span className="text-[10px] lg:text-[11px] text-muted-foreground">Updating live</span>
             </div>
 
-            <div className="mt-4">
-              <div className="text-2xl font-bold text-foreground">71,310</div>
-              <div className="text-[11px] text-muted-foreground">Subscribers</div>
+            <div className="mt-2 lg:mt-4">
+              <div className="text-lg lg:text-2xl font-bold text-foreground">71,310</div>
+              <div className="text-[10px] lg:text-[11px] text-muted-foreground">Subscribers</div>
             </div>
 
-            <button className="mt-2.5 text-[11px] bg-muted text-muted-foreground rounded-full px-3 py-1 hover:bg-muted/80 transition-colors">
+            <button className="mt-1.5 lg:mt-2.5 text-[10px] lg:text-[11px] bg-muted text-muted-foreground rounded-full px-2 lg:px-3 py-0.5 lg:py-1 hover:bg-muted/80 transition-colors">
               See live count
             </button>
 
-            <div className="mt-4 border-t border-border/40" />
+            <div className="mt-2 lg:mt-4 border-t border-border/40" />
 
-            <div className="mt-3">
-              <div className="text-2xl font-bold text-foreground">3,471</div>
-              <div className="text-[11px] text-muted-foreground">Views · Last 48 hours</div>
+            <div className="mt-1.5 lg:mt-3">
+              <div className="text-lg lg:text-2xl font-bold text-foreground">3,471</div>
+              <div className="text-[10px] lg:text-[11px] text-muted-foreground">Views · Last 48 hours</div>
             </div>
 
-            <div className="flex items-end gap-[3px] h-8 mt-2">
+            <div className="flex items-end gap-[2px] lg:gap-[3px] h-5 lg:h-8 mt-1 lg:mt-2">
               {[20, 35, 25, 45, 60, 40, 70, 55, 80, 65, 90, 75, 100].map((h, i) => (
                 <div
                   key={i}
@@ -139,7 +141,7 @@ export function Hero() {
               ))}
             </div>
 
-            <div className="flex justify-between mt-1 text-[10px] text-muted-foreground">
+            <div className="flex justify-between mt-0.5 lg:mt-1 text-[9px] lg:text-[10px] text-muted-foreground">
               <span>-48h</span>
               <span>Now</span>
             </div>

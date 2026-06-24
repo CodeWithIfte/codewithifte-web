@@ -34,10 +34,12 @@ const personalInfo = [
 ];
 
 export function About() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <section id="about" className="py-24 px-6 lg:px-12">
+    <section id="about" className="relative py-24 px-6 lg:px-12 overflow-hidden">
+      <div className="absolute top-10 left-1/3 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
         <div className="services-grid space-y-6">
           {services.map((s) => (
