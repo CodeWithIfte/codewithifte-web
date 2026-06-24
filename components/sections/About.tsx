@@ -130,12 +130,6 @@ export function About() {
                     </div>
                     <div className="relative pl-6 before:absolute before:left-[3px] before:top-2 before:h-[calc(100%+2rem)] before:w-px before:bg-border">
                       <span className="absolute left-0 top-2 w-[7px] h-[7px] rounded-full bg-primary" />
-                      <h4 className="text-base font-bold text-foreground">ShapedPlugin LLC</h4>
-                      <p className="text-sm text-muted-foreground mt-0.5">React Developer (WordPress)</p>
-                      <p className="text-sm text-foreground font-medium mt-2">Sep 2025 - Nov 2025 · 3 mos</p>
-                    </div>
-                    <div className="relative pl-6 before:absolute before:left-[3px] before:top-2 before:h-[calc(100%+2rem)] before:w-px before:bg-border">
-                      <span className="absolute left-0 top-2 w-[7px] h-[7px] rounded-full bg-primary" />
                       <h4 className="text-base font-bold text-foreground">Foundation Engineering Solution</h4>
                       <p className="text-sm text-muted-foreground mt-0.5">IT-CoOrdinator</p>
                       <p className="text-sm text-foreground font-medium mt-2">May 2023 - Sep 2023 · 5 mos</p>
