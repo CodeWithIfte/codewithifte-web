@@ -8,15 +8,19 @@ export function Footer() {
         Designed and built with care &copy; {new Date().getFullYear()} Ifte
       </p>
       <div className="mt-4 flex justify-center gap-3">
-        {[Mail, Github, Linkedin].map((Icon, i) => (
-          <a
-            key={i}
-            href="#"
-            className="w-9 h-9 grid place-items-center rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
-          >
-            <Icon className="w-3.5 h-3.5" />
-          </a>
-        ))}
+          {[
+            { Icon: Mail, href: "mailto:codewithifte@gmail.com" },
+            { Icon: Github, href: "https://github.com/codewithifte" },
+            { Icon: Linkedin, href: "https://www.linkedin.com/in/codewithifte" },
+          ].map(({ Icon, href }, i) => (
+            <a
+              key={i}
+              href={href}
+              className="w-9 h-9 grid place-items-center rounded-full border border-border hover:border-primary hover:text-primary transition-colors"
+            >
+              <Icon className="w-3.5 h-3.5" />
+            </a>
+          ))}
       </div>
     </footer>
   );

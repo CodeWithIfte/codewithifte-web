@@ -27,7 +27,7 @@ const tabs = ["Personal Info", "Qualifications", "Skills"];
 const personalInfo = [
   { icon: User, label: "Name", value: "Ifte" },
   { icon: Phone, label: "Phone", value: "+880 1700 000000" },
-  { icon: Mail, label: "Email", value: "hello@codewithifte.com" },
+  { icon: Mail, label: "Email", value: "codewithifte@gmail.com" },
   { icon: CalendarDays, label: "Date of Birth", value: "01 January 2000" },
   { icon: GraduationCap, label: "Education", value: "BSc in Computer Science" },
   { icon: MapPin, label: "Location", value: "Dhaka, Bangladesh" },
@@ -37,11 +37,11 @@ export function About() {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <section id="about" className="relative py-24 px-6 lg:px-12 overflow-hidden">
+    <section id="about" className="relative py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
       <div className="absolute top-10 left-1/3 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
-        <div className="services-grid space-y-6">
+        <div className="services-grid hidden lg:block space-y-6">
           {services.map((s) => (
             <div
               key={s.title}
@@ -59,14 +59,14 @@ export function About() {
         </div>
 
         <div>
-          <h2 className="reveal text-4xl md:text-5xl font-bold">About me</h2>
+          <h2 className="reveal text-4xl md:text-5xl font-bold text-center lg:text-left">About me</h2>
 
-          <div className="reveal mt-8 flex bg-card rounded-full p-1 border border-border w-fit">
+          <div className="reveal mt-8 flex bg-card rounded-full p-1 border border-border w-fit mx-auto lg:mx-0">
             {tabs.map((tab, i) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(i)}
-                className={`relative px-5 py-2 text-sm font-medium rounded-full transition-colors ${
+                className={`relative px-4 lg:px-5 py-1.5 lg:py-2 text-sm font-medium rounded-full transition-colors ${
                   activeTab === i
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:text-foreground"

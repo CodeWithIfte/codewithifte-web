@@ -25,6 +25,13 @@ export const metadata: Metadata = {
   title: "Ifte — Software Developer & Shopify App Builder",
   description:
     "Ifte is a software developer specializing in Shopify apps, Node.js/NestJS, React, Docker and DevOps. Builder of CodeConfig Countdown Timer Bar.",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+  },
   openGraph: {
     title: "Ifte — Software Developer",
     description: "Shopify apps, Node.js/NestJS, React, Docker, DevOps.",

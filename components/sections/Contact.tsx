@@ -13,7 +13,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-24 px-6 lg:px-12 overflow-hidden">
+    <section id="contact" className="relative py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
       <div className="absolute top-10 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/3 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] pointer-events-none" />
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
@@ -21,7 +21,7 @@ export function Contact() {
           <div className="reveal flex items-center gap-3 text-sm text-primary font-mono uppercase tracking-widest">
             <span className="w-10 h-px bg-primary" /> Contact
           </div>
-          <h2 className="reveal mt-6 text-4xl md:text-6xl font-bold leading-tight">
+          <h2 className="reveal mt-6 text-4xl md:text-6xl font-bold leading-tight text-center lg:text-left">
             Have a project?<br />Let&apos;s talk<span className="text-primary">.</span>
           </h2>
           <p className="reveal mt-6 text-muted-foreground max-w-md">
@@ -30,9 +30,9 @@ export function Contact() {
           </p>
           <div className="reveal mt-8 flex gap-3">
             {[
-              { Icon: Mail, href: "mailto:hello@example.com" },
-              { Icon: Github, href: "#" },
-              { Icon: Linkedin, href: "#" },
+              { Icon: Mail, href: "mailto:codewithifte@gmail.com" },
+              { Icon: Github, href: "https://github.com/codewithifte" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/codewithifte" },
             ].map(({ Icon, href }, i) => (
               <a
                 key={i}
