@@ -113,7 +113,7 @@ export function Hero() {
             </div>
 
             <div className="mt-2 lg:mt-4">
-              <div className="text-lg lg:text-2xl font-bold text-foreground">71,310</div>
+              <div className="text-lg lg:text-2xl font-bold text-foreground">500+</div>
               <div className="text-[10px] lg:text-[11px] text-muted-foreground">Subscribers</div>
             </div>
 
@@ -124,7 +124,7 @@ export function Hero() {
             <div className="mt-2 lg:mt-4 border-t border-border/40" />
 
             <div className="mt-1.5 lg:mt-3">
-              <div className="text-lg lg:text-2xl font-bold text-foreground">3,471</div>
+              <div className="text-lg lg:text-2xl font-bold text-foreground">1,000+</div>
               <div className="text-[10px] lg:text-[11px] text-muted-foreground">Views · Last 48 hours</div>
             </div>
 
