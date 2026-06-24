@@ -133,6 +133,32 @@ export default function Portfolio() {
           ease: "power3.out",
         });
       });
+
+      const lineFill = document.querySelector("#scroll-line-fill");
+      const lineDot = document.querySelector("#scroll-line-dot");
+      if (lineFill && lineDot) {
+        gsap.to(lineFill, {
+          scrollTrigger: {
+            trigger: "#projects",
+            start: "top 60%",
+            end: "bottom 60%",
+            scrub: 1,
+          },
+          height: "100%",
+          ease: "none",
+        });
+
+        gsap.to(lineDot, {
+          scrollTrigger: {
+            trigger: "#projects",
+            start: "top 60%",
+            end: "bottom 60%",
+            scrub: 1,
+          },
+          top: "calc(100% - 4px)",
+          ease: "none",
+        });
+      }
     }, heroRef);
 
     return () => {

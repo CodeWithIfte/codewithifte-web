@@ -63,8 +63,10 @@ export function Projects() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="reveal text-4xl md:text-6xl font-bold">Projects</h2>
-          <div className="reveal mx-auto mt-6 w-px h-12 bg-border relative">
-            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary" />
+          <div className="reveal mx-auto mt-6 w-px h-12 relative">
+            <div className="absolute inset-0 bg-border" />
+            <div id="scroll-line-fill" className="absolute top-0 left-0 w-full h-0 bg-primary origin-top" />
+            <span id="scroll-line-dot" className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary" />
           </div>
         </div>
 
