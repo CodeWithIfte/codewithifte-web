@@ -59,6 +59,21 @@
 
 @layer base {
   * { border-color: var(--color-border); }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-muted);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.72 0.18 35 / 0.6);
+  }
+
   html { scroll-behavior: smooth; }
   body {
     background-color: var(--color-background);
