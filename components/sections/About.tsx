@@ -118,9 +118,33 @@ export function About() {
                   <div className="space-y-8">
                     <div className="relative pl-6 before:absolute before:left-[3px] before:top-2 before:h-[calc(100%+2rem)] before:w-px before:bg-border">
                       <span className="absolute left-0 top-2 w-[7px] h-[7px] rounded-full bg-primary" />
+                      <h4 className="text-base font-bold text-foreground">CodeConfig</h4>
+                      <p className="text-sm text-muted-foreground mt-0.5">Sr. React Developer</p>
+                      <p className="text-sm text-foreground font-medium mt-2">Nov 2025 - Present · 8 mos</p>
+                    </div>
+                    <div className="relative pl-6 before:absolute before:left-[3px] before:top-2 before:h-[calc(100%+2rem)] before:w-px before:bg-border">
+                      <span className="absolute left-0 top-2 w-[7px] h-[7px] rounded-full bg-primary" />
+                      <h4 className="text-base font-bold text-foreground">CodeConfig</h4>
+                      <p className="text-sm text-muted-foreground mt-0.5">React & WordPress Plugin Developer</p>
+                      <p className="text-sm text-foreground font-medium mt-2">Feb 2024 - Dec 2025 · 1 yr 11 mos</p>
+                    </div>
+                    <div className="relative pl-6 before:absolute before:left-[3px] before:top-2 before:h-[calc(100%+2rem)] before:w-px before:bg-border">
+                      <span className="absolute left-0 top-2 w-[7px] h-[7px] rounded-full bg-primary" />
+                      <h4 className="text-base font-bold text-foreground">ShapedPlugin LLC</h4>
+                      <p className="text-sm text-muted-foreground mt-0.5">React Developer (WordPress)</p>
+                      <p className="text-sm text-foreground font-medium mt-2">Sep 2025 - Nov 2025 · 3 mos</p>
+                    </div>
+                    <div className="relative pl-6 before:absolute before:left-[3px] before:top-2 before:h-[calc(100%+2rem)] before:w-px before:bg-border">
+                      <span className="absolute left-0 top-2 w-[7px] h-[7px] rounded-full bg-primary" />
                       <h4 className="text-base font-bold text-foreground">Foundation Engineering Solution</h4>
-                      <p className="text-sm text-muted-foreground mt-0.5">IT-CoOrdinaryator</p>
-                      <p className="text-sm text-foreground font-medium mt-2">May 2023 - Sep 2023</p>
+                      <p className="text-sm text-muted-foreground mt-0.5">IT-CoOrdinator</p>
+                      <p className="text-sm text-foreground font-medium mt-2">May 2023 - Sep 2023 · 5 mos</p>
+                    </div>
+                    <div className="relative pl-6 before:absolute before:left-[3px] before:top-2 before:h-[calc(100%+2rem)] before:w-px before:bg-border">
+                      <span className="absolute left-0 top-2 w-[7px] h-[7px] rounded-full bg-primary" />
+                      <h4 className="text-base font-bold text-foreground">Fiverr</h4>
+                      <p className="text-sm text-muted-foreground mt-0.5">Virtual Assistant & Lead Generation Expert</p>
+                      <p className="text-sm text-foreground font-medium mt-2">May 2020 - Feb 2023 · 2 yrs 10 mos</p>
                     </div>
                   </div>
                 </div>
@@ -134,8 +158,8 @@ export function About() {
                     <div className="relative pl-6 before:absolute before:left-[3px] before:top-2 before:h-[calc(100%+2rem)] before:w-px before:bg-border">
                       <span className="absolute left-0 top-2 w-[7px] h-[7px] rounded-full bg-primary" />
                       <h4 className="text-base font-bold text-foreground">Rajshahi Polytechnic Institute</h4>
-                      <p className="text-sm text-muted-foreground mt-0.5">Diploma In Engineering</p>
-                      <p className="text-sm text-foreground font-medium mt-2">2020 - Present</p>
+                      <p className="text-sm text-muted-foreground mt-0.5">Diploma in Engineering, Mechatronics, Robotics, and Automation Engineering</p>
+                      <p className="text-sm text-foreground font-medium mt-2">Jan 2020 - Dec 2024</p>
                     </div>
                   </div>
                 </div>

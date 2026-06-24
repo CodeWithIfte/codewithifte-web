@@ -2,6 +2,20 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    title: "Ninja Drive",
+    tags: ["WordPress", "Google Drive", "PHP", "React"],
+    desc: "All-in-one Google Drive plugin for WordPress — browse, embed, gallery, media player, file lists, and WooCommerce integration. Used by thousands of sites.",
+    code: `// Shortcode example: embed a Google Drive file browser
+add_shortcode('ninja_drive_browser', function ($atts) {
+  $folderId = $atts['folder'] ?? 'root';
+  $files = ninja_drive_list_files($folderId);
+  return ninja_drive_render_browser($files);
+});`,
+    primary: "Live Demo",
+    link: "https://plugininja.com/ninja-drive/",
+    wp: "https://wordpress.org/plugins/ninja-drive/",
+  },
+  {
     title: "CodeConfig Countdown Timer Bar",
     tags: ["Shopify", "Node.js", "React", "Billing"],
     desc: "Live Shopify app I own and maintain — countdown timer bars merchants use to drive urgency on storefronts. End-to-end: code, pricing, reviews and support.",
@@ -15,22 +29,7 @@ const projects = [
   res.json(timer);
 });`,
     primary: "View on Shopify",
-    link: "#",
-  },
-  {
-    title: "Ninja Drive",
-    tags: ["NestJS", "React", "Docker"],
-    desc: "File and asset management platform with role-based access, background processing and a fast React client.",
-    code: `@Controller("files")
-export class FilesController {
-  @Post("upload")
-  @UseInterceptors(FileInterceptor("file"))
-  upload(@UploadedFile() file: Express.Multer.File) {
-    return this.files.store(file);
-  }
-}`,
-    primary: "View project",
-    link: "#",
+    link: "https://apps.shopify.com/codeconfig-countdown-timer-bar",
   },
   {
     title: "Teacher Management System",
@@ -40,20 +39,26 @@ export class FilesController {
   queryKey: ["teachers", filters],
   queryFn: () => api.listTeachers(filters),
 });`,
-    primary: "View project",
-    link: "#",
+    primary: "View site",
+    link: "https://masfiqur.bd/",
   },
   {
-    title: "Help Center / FAQ App",
-    tags: ["Shopify", "React", "Embedded"],
-    desc: "FAQ and help-center app for merchants — searchable categories, theme-aware embeds and a polished editor.",
-    code: `<HelpCenter
-  categories={categories}
-  onSearch={handleSearch}
-  theme={shop.theme}
-/>`,
-    primary: "View project",
-    link: "#",
+    title: "CodeConfig Announcement Bar",
+    tags: ["Shopify", "React", "Node.js", "Billing"],
+    desc: "Add powerful announcement bars to your store in minutes — no code needed. Choose from sticky headers, scrolling marquees, rotating carousels, or animated sliding bars. Display flash sale countdowns, shipping offers, and promo codes. Target by location, page, or schedule. Built with a customizable CTA button to drive clicks and conversions.",
+    code: `app.post("/api/bars", async (req, res) => {
+  const shop = req.shopify.session.shop;
+  const bar = await AnnouncementBar.create({
+    shop,
+    message: req.body.message,
+    style: req.body.style,
+    schedule: req.body.schedule,
+  });
+  res.json(bar);
+});`,
+    primary: "Shopify App Store",
+    link: "https://apps.shopify.com/codeconfig-announcement-bar",
+    demo: "https://codeconfig.dev/announcement-bars/",
   },
 ];
 
@@ -101,10 +106,10 @@ export function Projects() {
                     {p.primary}
                   </a>
                   <a
-                    href={p.link}
+                    href={p.wp || p.demo || p.link}
                     className="inline-flex items-center gap-1 text-xs lg:text-sm border-b border-foreground/30 pb-0.5 hover:text-primary hover:border-primary transition-colors"
                   >
-                    Live demo <ArrowUpRight className="w-3 h-3 lg:w-3.5 lg:h-3.5" />
+                    {p.wp ? "WordPress.org" : p.demo ? "Live demo" : "Live demo"} <ArrowUpRight className="w-3 h-3 lg:w-3.5 lg:h-3.5" />
                   </a>
                 </div>
               </div>
