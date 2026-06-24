@@ -26,7 +26,7 @@ const techBadges = [
 
 export function Hero() {
   return (
-    <section id="home" className="relative pt-32 pb-20 px-6 lg:px-12 overflow-hidden">
+    <section id="home" className="relative pt-20 lg:pt-32 pb-20 px-6 lg:px-12 overflow-hidden">
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -42,7 +42,7 @@ export function Hero() {
             Helping businesses grow with clean, modern code.
           </p>
 
-          <div className="hero-line mt-8 flex flex-wrap gap-6">
+          <div className="hero-line mt-8 flex flex-wrap gap-6 justify-center lg:justify-start">
             {stats.map((s) => (
               <div key={s.label} className="stat-item flex items-center gap-2">
                 <div className="p-2 rounded-lg bg-primary/10">
@@ -62,11 +62,11 @@ export function Hero() {
             <TestimonialSlider />
           </div>
 
-          <div className="hero-line mt-6 flex flex-wrap gap-3">
+          <div className="hero-line mt-6 flex flex-wrap gap-1.5 lg:gap-3 justify-center lg:justify-start">
             {techBadges.map((t, i) => (
               <div
                 key={i}
-                className="tech-badge w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold border overflow-hidden"
+                className="tech-badge w-7 h-7 lg:w-10 lg:h-10 rounded-full flex items-center justify-center text-xs font-bold border overflow-hidden"
                 style={{
                   backgroundColor: t.icon ? `${t.color}15` : undefined,
                   color: t.color,
@@ -90,7 +90,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center py-8">
+        <div className="relative flex items-center justify-center py-4 lg:py-8">
           <div className="hero-portrait-wrap relative">
             <div className="w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] rounded-full border-[3px] border-primary/70 p-2.5">
               <div className="w-full h-full rounded-full overflow-hidden bg-card">

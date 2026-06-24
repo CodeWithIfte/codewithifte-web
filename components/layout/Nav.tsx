@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
+
+const links = ["Home", "About", "Projects", "Contact"];
 
 export function Nav() {
   const [dark, setDark] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
@@ -26,8 +29,9 @@ export function Nav() {
         <a href="#home" className="nav-item font-display font-bold text-xl tracking-tight">
           Ifte<span className="text-primary">.</span>
         </a>
+
         <div className="hidden md:flex items-center gap-8 text-sm">
-          {["Home", "About", "Projects", "Contact"].map((l) => (
+          {links.map((l) => (
             <a
               key={l}
               href={`#${l.toLowerCase()}`}
@@ -50,7 +54,48 @@ export function Nav() {
             {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
         </div>
+
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={toggle}
+            className="p-2 rounded-md text-muted-foreground hover:text-primary transition-colors"
+            aria-label="Toggle theme"
+          >
+            {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          <button
+            onClick={() => setOpen(!open)}
+            className="p-2 rounded-md text-muted-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
+
+      {open && (
+        <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur-md">
+          <div className="flex flex-col items-center gap-6 py-8 text-sm">
+            {links.map((l) => (
+              <a
+                key={l}
+                href={`#${l.toLowerCase()}`}
+                onClick={() => setOpen(false)}
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                {l}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center gap-1.5 rounded-md border border-primary px-5 py-2 text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
+            >
+              Let&apos;s talk
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
