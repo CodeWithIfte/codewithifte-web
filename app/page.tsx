@@ -45,11 +45,43 @@ export default function Portfolio() {
 
       if (marqueeRef.current) {
         const w = marqueeRef.current.scrollWidth / 2;
-        gsap.to(marqueeRef.current, {
+        const marqueeTween = gsap.to(marqueeRef.current, {
           x: -w,
           duration: 25,
           repeat: -1,
           ease: "none",
+        });
+
+        let scrollTimeout: ReturnType<typeof setTimeout>;
+        const boostSpeed = () => {
+          gsap.to(marqueeTween, {
+            timeScale: 15,
+            duration: 0.2,
+            ease: "power2.out",
+          });
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            gsap.to(marqueeTween, {
+              timeScale: 1,
+              duration: 1.2,
+              ease: "power2.out",
+            });
+          }, 300);
+        };
+
+        window.addEventListener("wheel", boostSpeed, { passive: true });
+        window.addEventListener("touchmove", boostSpeed, { passive: true });
+
+        gsap.from(marqueeRef.current.parentElement, {
+          scrollTrigger: {
+            trigger: marqueeRef.current.parentElement,
+            start: "top 95%",
+            end: "top 40%",
+          },
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+          ease: "power3.out",
         });
       }
 
